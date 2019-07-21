@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	Definimos al inicio los beans menos dependientes -->
+<!-- 	equivalente al codigo Java : InterpreteEspañol interprete = new InterpreteEspañol();  -->
+	<bean id="interpreteEspanol" class="beans.InterpreteEspanol"></bean>
+	<bean id="interpreteIngles" class="beans.InterpreteIngles"></bean>
+	
+<!-- 	Definimos al último los beans menos dependientes -->
+	<bean id="traductorEspanol" class="beans.Traductor">
+<!-- 	Equivalente a : traductor. setInterprete(InterpreteEspañol) -->
+		<property name="interprete" ref="interpreteEspanol"></property>
+<!-- 	Equivalente a : traductor. setNombre(InterpreteEspañol) en metodo MAIN-->
+		<property name="nombre" value="Carlitos Mocho"></property>
+	</bean>	
+	
+	<bean id="traductorIngles" class="beans.Traductor">
+		<property name="interprete" ref="interpreteIngles"></property>
+		<property name="nombre" value="Carlitos Frijolero"></property>
+	</bean>
+
+</beans>

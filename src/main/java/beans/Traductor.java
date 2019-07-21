@@ -2,7 +2,7 @@ package beans;
 
 public class Traductor {
 
-	private InterpreteEspanol interprete;
+	private Interprete interprete;
 	private String nombre;
 	
 	public void hablar() {
@@ -11,10 +11,10 @@ public class Traductor {
 		this.interprete.despedirse();
 	}
 	
-	public InterpreteEspanol getInterprete() {
+	public Interprete getInterprete() {
 		return interprete;
 	}
-	public void setInterprete(InterpreteEspanol interprete) {
+	public void setInterprete(Interprete interprete) {
 		this.interprete = interprete;
 	}
 	public String getNombre() {
